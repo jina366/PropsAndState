@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import { useState } from "react";
+
 const Color = (props) => {
-  return( <div className={props.color} onClick={() => props.selectColor(props.color)} />
-)};
+  return (
+    <div
+      className={props.color}
+      onClick={() => props.selectColor(props.color)}
+    />
+  );
+};
 
 const Picker = () => {
   const [selectedColor, setSelectedColor] = useState("");
+  const selectColor = (colorName) => {
+    setSelectedColor(colorName);
+  };
   return (
     <div id="container">
       <div id="navbar">
@@ -20,10 +28,6 @@ const Picker = () => {
       </div>
     </div>
   );
-};
-
-const selectColor = (colorName) => {
-  setSelectedColor(colorName);
 };
 
 ReactDOM.render(<Picker />, document.getElementById("app"));
