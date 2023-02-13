@@ -1,7 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// write your Color component here
+const Color = (props) => {
+  return (
+    <div className={props.color} />
+  )
+}
+
 
 const Picker = () => {
   return (
@@ -10,7 +15,11 @@ const Picker = () => {
         <div>Currently selected: </div>
         <div className="red">red</div>
       </div>
-      <div id="colors-list">{/* colors go here */}</div>
+      <div id="colors-list">
+        <Color color='yellow'/>
+        <Color color='green'/>
+        <Color color='violet'/>
+      </div>
     </div>
   );
 }
